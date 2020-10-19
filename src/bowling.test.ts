@@ -24,7 +24,7 @@ describe('BowlingGame Test', () => {
   })
 
   test('should score 24 for a strike followed by  3 and 4 balls', () => {
-    game.roll(10)
+    rollStrike()
     game.roll(3)
     game.roll(4)
     rollMany(16, 0)
@@ -40,5 +40,9 @@ describe('BowlingGame Test', () => {
   function rollSpare (): void {
     game.roll(5)
     game.roll(5)
+  }
+
+  function rollStrike (): void {
+    game.roll(10)
   }
 })
