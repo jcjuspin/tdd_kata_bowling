@@ -31,6 +31,11 @@ describe('BowlingGame Test', () => {
     expect(game.score()).toEqual(24)
   })
 
+  test('should return a perfect Game', () => {
+    rollMany(12, 10)
+    expect(game.score()).toBe(300)
+  })
+
   function rollMany (n: number, pins: number): void {
     for (let i = 0; i < n; i++) {
       game.roll(pins);
