@@ -5,7 +5,7 @@ describe('BowlingGame Test', () => {
     for (let i = 0; i < 20; i++) {
       game.roll(0);
     }
-    expect(game.score()).toEqual(0)
+    expect(game.score).toEqual(0)
   })
 
   test('should score 20 for all ones game', () => {
@@ -13,6 +13,6 @@ describe('BowlingGame Test', () => {
     for (let i = 0; i < 20; i++) {
       game.roll(1);
     }
-    expect(game.score()).toEqual(20)
+    expect(game.score).toEqual(20)
   })
 })
