@@ -6,7 +6,7 @@ export class Game {
     let score = 0
     let frameIndex = 0
     for (let frame = 0; frame < 10; frame++) {
-      if(this.rolls[frameIndex] == 10) {
+      if(this.isStrike(frameIndex)) {
         score += 10 + this.strikeBonus(frameIndex)
         frameIndex++
       } else if (this.isSpare(frameIndex)) {
@@ -24,8 +24,12 @@ export class Game {
     this.rolls[this.currentRoll++] = pins
   }
 
-  isSpare(frameIndex: number): boolean {
+  private isSpare(frameIndex: number): boolean {
     return this.rolls[frameIndex] + this.rolls[frameIndex + 1] == 10
+  }
+
+  private isStrike(frameIndex: number): boolean {
+    return this.rolls[frameIndex] == 10
   }
 
   private sumOfBallsinFrame(frameIndex: number): number {
