@@ -1,3 +1,4 @@
+import { Game } from './bowling'
 describe('BowlingGame Test', () => {
   test('should return a score of zero when player misses every roll', () => {
     const game: Game = new Game()
