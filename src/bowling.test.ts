@@ -17,8 +17,7 @@ describe('BowlingGame Test', () => {
   })
 
   test('should score 16 with a spare followed by a 3 ball', () => {
-    game.roll(5)
-    game.roll(5)
+    rollSpare()
     game.roll(3)
     rollMany(17,0)
     expect(game.score()).toEqual(16)
@@ -28,5 +27,10 @@ describe('BowlingGame Test', () => {
     for (let i = 0; i < n; i++) {
       game.roll(pins);
     }
+  }
+
+  function rollSpare (): void {
+    game.roll(5)
+    game.roll(5)
   }
 })
